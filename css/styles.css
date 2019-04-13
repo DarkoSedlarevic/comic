@@ -34,8 +34,8 @@ html {
 .case-back-container {
   position: relative;
   background-color: #fff;
-  width: 242px;
-  height: 242px;
+  width: 542px;
+  height: 542px;
   transform: scale(1);
   border-radius: 50%;
 }
