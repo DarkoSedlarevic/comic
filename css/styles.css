@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  background: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+
+.screensaver-container {
+  background-color: cyan;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  display: flex;
+ 	flex-direction: column;
+ 	flex-wrap: nowrap;
+ 	justify-content: center;
+ 	align-items: center;
+ 	/*align-content: center;*/
+}
+
+.case-back-container {
+  position: relative;
+  background-color: #fff;
+  width: 542px;
+  height: 542px;
+  transform: scale(1);
+  border-radius: 50%;
+}
+/*change fill class name to somethnig like case back color*/
+.case-back .b {
+  fill: magenta;
+}
+.case-back-serial {
+  position: absolute;
+  width: 188px;
+  height:  26px;
+  left: 50%;
+  bottom: 150px;
+  margin-left: -94px;
+}
+/*change fill class name to somethnig like case back serial color*/
+.case-back-serial .l {
+  fill: magenta;
+}
+
+
+
+/*controls menu*/
+.controls-menu {
+  position: absolute;
+  bottom:0;
+  left: 0;
+  /*background-color: rgba(255,255,255,.2);*/
+  overflow: auto;
+  white-space: nowrap;
+  max-width: 90%;
+  height:  auto;
+  margin: 30px;
+  padding: 20px;
+}
+.controls-menu li, .controls-menu li a {
+  display: inline;
+  padding: 10px;
+  /*border-radius: 30px;*/
+  margin: 5px;
+  /*background-color: magenta;*/
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.color-btn, .color-btn a   {
+  display: inline-block;
+  /*background-color:  magenta;*/
+  width:20px;
+  height:20px;
+  border-radius: 20px;
+  /*padding: 10px 10px;*/
+  box-shadow: 0 .15em 1.5em 0 rgba(0,0,0,.5),0 0 1em 0 rgba(0,0,0,.03);
+
+  border: solid 2px rgba(255,255,255, 1);
+}
+.color-btn::after  {
+  content: "";
+  display: inline-block;
+  width:12px;
+  height:12px;
+  border-radius: 20px;
+  border: solid 2px rgba(0,0,0,.5);
+  background:;
+}
