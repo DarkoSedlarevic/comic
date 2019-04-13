@@ -34,8 +34,8 @@ html {
 .case-back-container {
   position: relative;
   background-color: #fff;
-  width: 542px;
-  height: 542px;
+  width: 271px;
+  height: 271px;
   transform: scale(1);
   border-radius: 50%;
 }
@@ -45,8 +45,8 @@ html {
 }
 .case-back-serial {
   position: absolute;
-  width: 188px;
-  height:  26px;
+  width: 94px;
+  height:  13px;
   left: 50%;
   bottom: 150px;
   margin-left: -94px;
