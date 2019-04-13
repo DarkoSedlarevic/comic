@@ -39,6 +39,11 @@ html {
   transform: scale(1);
   border-radius: 50%;
 }
+.case-back-container svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 /*change fill class name to somethnig like case back color*/
 .case-back .b {
   fill: magenta;
