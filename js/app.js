@@ -210,12 +210,16 @@ $('#request-full-screen').click(function () {
 
 //take a screenshot with html2canvas and download with filesaver.js
 function screenshotAndDownload() {
+    var overlayDiv = document.querySelector('.download-overlay');
+    //show overlay beffore html2canvas
+    overlayDiv.style.visibility = 'visible';
     html2canvas(document.body).then(function(canvas) {
         // Export canvas as a blob
         canvas.toBlob(function(blob) {
             // Generate file download
             window.saveAs(blob, "website_screenshot.png");
         });
+	//hide overlay after save
+        overlayDiv.style.visibility = 'hidden'; 
     });
-
 };
