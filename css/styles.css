@@ -23,7 +23,7 @@ html {
   padding: 10px;
   background: blue;
   width: 300px;
-  /*margin-left: -150px;*/
+  margin-left: -150px;
   /*visibility: hidden;*/
   /*display: none;*/
 }
