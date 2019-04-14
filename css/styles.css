@@ -31,19 +31,24 @@ html {
  	/*align-content: center;*/
 }
 
+/*SVG AND CONTAINER MUST BE SMOLER TO FIT ON SCREEN ON LOAD ON MOBILE
+OR ELSE SCREEN SHOT WILL BE CUT OFF*/
 .case-back-container {
   position: relative;
   background-color: #fff;
   width: 271px;
   height: 271px;
-  transform: scale(1);
+  transform: scale(2);
   border-radius: 50%;
 }
-.case-back-container svg {
+/*READ FULL ARTICLE AND MAKE CHANGES FOR RESPONSIVE SVG
+https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/*/
+/*.case-back-container svg {
     position: absolute;
     top: 0;
     left: 0;
-}
+}*/
+
 /*change fill class name to somethnig like case back color*/
 .case-back .b {
   fill: magenta;
