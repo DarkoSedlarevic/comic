@@ -24,7 +24,7 @@ html {
   background: blue;
   width: 300px;
   margin-left: -150px;
-  visibility: hidden;
+  
 }
 /*fuck picker max-width in ems so it can be "responsive" inside of my container -- why? i dont know :*/
 .pcr-app {
