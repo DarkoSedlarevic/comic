@@ -92,7 +92,8 @@ const caseBackColor = new Pickr({
     comparison: false,
     //use as button
     useAsButton: true,
-    showAlways: true,
+    // inline: true,
+    // showAlways: true,
 
     swatches: [
         'rgba(244, 67, 54, 1)',
@@ -162,6 +163,53 @@ caseBackColor.on('change', (newColor) => {
 });
 
 
+//TEST PICKER VISIBLE IN CONTAINER
+
+const testColor = new Pickr({
+    el: '.test-picker',
+    //white
+    default: '#ff00ff',
+    // show color preview on button
+    comparison: false,
+    //use as button
+    useAsButton: true,
+    inline: true,
+    showAlways: true,
+
+    swatches: [
+        'rgba(244, 67, 54, 1)',
+        'rgba(233, 30, 99, 0.95)',
+        'rgba(156, 39, 176, 0.9)',
+        'rgba(103, 58, 183, 0.85)',
+        'rgba(63, 81, 181, 0.8)',
+        'rgba(33, 150, 243, 0.75)',
+        'rgba(3, 169, 244, 0.7)',
+        'rgba(0, 188, 212, 0.7)',
+        'rgba(0, 150, 136, 0.75)',
+        'rgba(76, 175, 80, 0.8)',
+        'rgba(139, 195, 74, 0.85)',
+        'rgba(205, 220, 57, 0.9)',
+        'rgba(255, 235, 59, 0.95)',
+        'rgba(255, 193, 7, 1)'
+    ],
+
+    components: {
+
+        preview: true,
+        opacity: true,
+        hue: true,
+
+        interaction: {
+            hex: true,
+            rgba: true,
+            hsva: true,
+            input: true,
+            clear: true,
+            save: false
+        }
+    }
+});
+//============================================================
 
 
 
@@ -211,16 +259,21 @@ $('#request-full-screen').click(function () {
 
 //take a screenshot with html2canvas and download with filesaver.js
 function screenshotAndDownload() {
-    var overlayDiv = document.querySelector('.download-overlay');
+
+    //my experiment for faking "preparing" screensaver for download
+    var overlayDiv = document.getElementById('ovrl');
     //show overlay beffore html2canvas
     overlayDiv.style.visibility = 'visible';
+    // mozda dodati ispod time out function sekund dve zbog propagianja klika ===pogledati ma onaj plugin za klik  ...
+    ///////////////////////////////////////////////////////////////
     html2canvas(document.body).then(function(canvas) {
         // Export canvas as a blob
         canvas.toBlob(function(blob) {
             // Generate file download
-            window.saveAs(blob, "website_screenshot.png");
+            window.saveAs(blob, 'website_screenshot.png');
         });
-	//hide overlay after save
-        overlayDiv.style.visibility = 'hidden'; 
+        //hide overlay after save
+        overlayDiv.style.visibility = 'hidden';
     });
+
 };
