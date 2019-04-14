@@ -92,6 +92,7 @@ const caseBackColor = new Pickr({
     comparison: false,
     //use as button
     useAsButton: true,
+    showAlways: true,
 
     swatches: [
         'rgba(244, 67, 54, 1)',
