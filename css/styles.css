@@ -19,12 +19,13 @@ html {
   position: absolute;
   left: 50%;
   bottom: 100px;
-  z-index: 11000;
+  z-index: 10000;
   padding: 10px;
   background: blue;
   width: 300px;
-  margin-left: -150px;
-  
+  /*margin-left: -150px;*/
+  /*visibility: hidden;*/
+  /*display: none;*/
 }
 /*fuck picker max-width in ems so it can be "responsive" inside of my container -- why? i dont know :*/
 .pcr-app {
@@ -118,6 +119,7 @@ https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/*/
   color: #333;
   font-size: 16px;
   cursor: pointer;
+
 }
 
 .color-btn, .color-btn a   {
