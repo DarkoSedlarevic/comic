@@ -7,21 +7,29 @@
 
 body,
 html {
-  
+  height: 100%;
   width: 100%;
   background: white;
   font-family: 'Montserrat', sans-serif;
 }
 
 
-
+/*test fixed color picker*/
+.color-container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 11000;
+}
+/*================*/
 
 .screensaver-container {
   background-color: cyan;
   width: 100%;
-  min-height: 100vh;
- 
- ;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-x:hidden;
+  overflow-y:hidden;
   display: flex;
  	flex-direction: column;
  	flex-wrap: nowrap;
@@ -29,7 +37,6 @@ html {
  	align-items: center;
  	/*align-content: center;*/
 }
-
 .download-overlay {
   background:  rgba(255,255,255,0.8);
   position: absolute;
@@ -40,6 +47,7 @@ html {
   left: 0;
   visibility: hidden;
 }
+
 /*SVG AND CONTAINER MUST BE SMOLER TO FIT ON SCREEN ON LOAD ON MOBILE
 OR ELSE SCREEN SHOT WILL BE CUT OFF*/
 .case-back-container {
@@ -89,6 +97,7 @@ https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/*/
   height:  auto;
   margin: 30px;
   padding: 20px;
+  z-index: 10000;
 }
 .controls-menu li, .controls-menu li a {
   display: inline;
