@@ -209,6 +209,15 @@ const testColor = new Pickr({
         }
     }
 });
+
+// button click
+$('.color-container').hide();
+
+$('#test').click(function () {
+		// $('.color-container').show();
+    $('.color-container').toggle();
+});
+
 //============================================================
 
 
