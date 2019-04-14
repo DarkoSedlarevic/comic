@@ -218,6 +218,59 @@ $('#test').click(function () {
     $('.color-container').toggle();
 });
 
+
+
+
+// test position of element
+// use http://api.jquery.com/width/ to see iz menu width =<> body width
+//and then position the container
+$("#position-test").click(function(){
+  // MY iDEA:
+  // if: 	picker btn position left + picker container width = or < body width
+  //    show container top left of the btn
+  // else:  simulate css - left 50% - margin minus 50% of elements width (dinamicly) - so i can set manualy in css difrent width's of container 
+  var bodyWidth = $('body').width();
+      colorPickerWidth = $('.color-container').outerWidth();
+      colorPickerHalfWidth = -(colorPickerWidth/2);
+      btnPosition = $("#position-test").offset(); // retrieve the current position of an element relative to the document -read jquery docs
+
+  // var menuWidth = $('.controls-menu-ul li').outerWidth();
+  //sum all li items from: https://stackoverflow.com/questions/25409750/calculate-width-by-the-sum-of-all-childs
+  // var menuWidth = 0;
+  // $('.controls-menu li').each(function() {
+  //       menuWidth += $(this).outerWidth(true);
+  //   });
+  // var x = $("#position-test").position(); // retrieve the current position of an element relative to the offset parent -read jquery docs
+  console.log('body width: ' + bodyWidth + 'px');
+  console.log('color picker container width: ' + colorPickerWidth + 'px');
+  console.log('clicked li position: ' + btnPosition.left + 'px');
+
+  if(btnPosition.left + colorPickerWidth <=  bodyWidth) {
+    //show container top left of the btn
+    $('.color-container').css({"left" : btnPosition.left, "margin-left" : "10px" }).toggle(); // add margin for li element padding
+  }
+  else {
+    // simulate css - left 50% - margin 50% of elements width - so i can change manualy in css difrent width's of container
+    $('.color-container').css({ 'left' : '50%', 'margin-left' : colorPickerHalfWidth }).toggle();
+    // $('.color-container').addClass('color-container-center').toggle();
+  }
+
+
+  // $('.color-container').css("left", x.left).toggle();
+  // $('.color-container').css({"left" : x.left, "margin-left" : "10px" }).toggle(); // add margin for li element padding
+
+  // alert("Top position: " + x.top + " Left position: " + x.left);
+});
+
+
+// MY iDEA:
+// if: 	picker btn position left + picker container width = or < body width
+//    show container top left of the btn
+// else: 	show container center (do as in css - center container)
+
+
+
+
 //============================================================
 
 
