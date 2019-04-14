@@ -17,9 +17,18 @@ html {
 /*test fixed color picker*/
 .color-container {
   position: absolute;
-  left: 0;
-  bottom: 0;
+  left: 50%;
+  bottom: 100px;
   z-index: 11000;
+  padding: 10px;
+  background: blue;
+  width: 300px;
+  margin-left: -150px;
+  visibility: hidden;
+}
+/*fuck picker max-width in ems so it can be "responsive" inside of my container -- why? i dont know :*/
+.pcr-app {
+  max-width: 100%;
 }
 /*================*/
 
