@@ -13,19 +13,60 @@ html {
   font-family: 'Montserrat', sans-serif;
 }
 
+/*for test fixed resize slider */
 
-/*test fixed color picker*/
-.color-container {
-  position: absolute;
+.resize-slider-container {
+  position: fixed;
   left: 50%;
-  bottom: 100px;
+  bottom: 80px;
   z-index: 10000;
   padding: 10px;
-  background: blue;
+  background: rgba(255,255,255, 0.9);
+  box-shadow: 0 .15em 1.5em 0 rgba(0,0,0,.5),0 0 1em 0 rgba(0,0,0,.03);
+  text-align:  center;
+  width: 60px;
+  margin-left: -30px;
+  /*transform: translate(-50%, -250%) rotate(-90deg);*/
+  /*border-radius: 20px;*/
+  /*visibility: hidden;*/
+  display: none;
+}
+.resize-slider-container .slider-btn {
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+/*from (at the end): https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range*/
+.vertical-slider-wrapper {
+  display: block;
+  height: 150px;
+  width: 20px;
+  margin: 20px auto;
+}
+.vertical-slider-wrapper input {
+  height: 20px;
+  width: 150px;
+  transform: rotate(-90deg);
+  transform-origin: 75px 75px;
+
+}
+
+
+/*fro test fixed color picker*/
+.color-container {
+  position: fixed;
+  left: 50%;
+  bottom: 80px;
+  z-index: 10000;
+  padding: 10px;
+  background: rgba(255,255,255, 0.9);
+  box-shadow: 0 .15em 1.5em 0 rgba(0,0,0,.5),0 0 1em 0 rgba(0,0,0,.03);
+
   width: 300px;
   margin-left: -150px;
+  /*border-radius: 20px;*/
   /*visibility: hidden;*/
-  /*display: none;*/
+  display: none;
 }
 /*fuck picker max-width in ems so it can be "responsive" inside of my container -- why? i dont know :*/
 .pcr-app {
@@ -80,6 +121,10 @@ https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/*/
 .case-back .b {
   fill: magenta;
 }
+.case-back{
+  /*add little scale becouse of backgraound 1px padding */
+  transform: scale(1.01);
+}
 .case-back-serial {
   position: absolute;
   width: 94px;
@@ -87,6 +132,8 @@ https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/*/
   left: 50%;
   bottom: 75px;
   margin-left: -47px;
+  /*add little scale becouse of backgraound 1px padding */
+  /*transform: scale(1.01);*/
 }
 /*change fill class name to somethnig like case back serial color*/
 .case-back-serial .l {
