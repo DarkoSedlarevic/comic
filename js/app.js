@@ -245,7 +245,7 @@ document.addEventListener('click', function (event) {
 
     // Otherwise, run our code...
     console.log('outside');
-    TweenLite.fromTo ($('.color-container, .resize-slider-container') , 0.3, {bottom:80, opacity:1}, {bottom:-500, opacity:1, display:'none'})  //animate with TweenLite
+    TweenLite.fromTo ($('.color-container, .resize-slider-container') , 0.3, {bottom:80, opacity:1}, {bottom:-300, opacity:1, display:'none'})  //animate with TweenLite
 
 
 }, false);
@@ -374,20 +374,23 @@ testColor.on('change', (newColor) => {
 $('.resize-slider').each(function(index) {
     $(this).on("click", function(){
   var bodyWidth = $('body').width();
+      popUpWidth = $('.menu-pop-up').outerWidth();
+
       sliderContainerWidth = $('.resize-slider-container').outerWidth();
       sliderContainerHalfWidth = -(sliderContainerWidth/2);
       btnPosition = $(this).offset(); // retrieve the current position of  clicked element  relative to the document -read jquery docs
+      console.log(popUpWidth);
 
   if(btnPosition.left + sliderContainerWidth <=  bodyWidth) {
     //show container top left of the btn
     $('.resize-slider-container').css({"left" : btnPosition.left, "margin-left" : "10px" }); // add margin for li element padding
-    TweenLite.fromTo ($('.resize-slider-container') , 0.3, {bottom:-500, opacity:1}, {bottom:80, opacity:1, display:'block'})  //animate with TweenLite
+    TweenLite.fromTo ($('.resize-slider-container') , 0.3, {bottom:-300, opacity:1}, {bottom:80, opacity:1, display:'block'})  //animate with TweenLite
   }
   else {
     // simulate css - left 50% - margin 50% of elements width - so i can change manualy in css difrent width's of container
     // $('.color-container').css({ 'left' : '50%', 'margin-left' : colorPickerHalfWidth }).show();
     $('.resize-slider-container').css({ 'left' : '50%', 'margin-left' : sliderContainerHalfWidth });
-    TweenLite.fromTo ($('.resize-slider-container') , 0.3, {bottom:-500, opacity:1}, {bottom:80, opacity:1, display:'block'})  //animate with TweenLite
+    TweenLite.fromTo ($('.resize-slider-container') , 0.3, {bottom:-300, opacity:1}, {bottom:80, opacity:1, display:'block'})  //animate with TweenLite
 
     // $('.color-container').addClass('color-container-center').toggle();
  }
