@@ -38,6 +38,7 @@
     </div>
 
     <!-- controls/menu -->
+    <div class="controls-menu-container">
     <ul class="controls-menu" data-html2canvas-ignore="true">
         <li id="request-full-screen">Full Screen</li>
 
@@ -61,35 +62,35 @@
         <li class="center-reset-translate" onclick="resetTranslate()">Center</li>
         <li class="bu" onclick="screenshotAndDownload()">Download</li>
     </ul>
+  </div>
 
     <!-- overlay test for "fake download loading"   -->
     <div id="ovrl" class="download-overlay" data-html2canvas-ignore="true">
         <div style="position: absolute; left:50%; top:50%; margin-left: -70px;">GISTRO LOADING</div>
     </div>
 
-                                  
+
     <div id="color-container" class="color-container" data-html2canvas-ignore="true">
-        <span class="close-picker-container" style="color:#000; background:white">
-          close</span>
+        <!-- <span class="close-picker-container" style="color:#000; background:white">close</span> -->
         <div class="test-picker"></div>
-        <span class="close-picker-container" style="color:#000; background:white">
-          close</span>
+        <!-- <span class="close-picker-container" style="color:#000; background:white">close</span> -->
     </div>
 
-    <div class="resize-slider-container">
+    <div class="resize-slider-container menu-pop-up">
 
-      <div class="size-num" style="text-align: center; display: inline;">1</div>
-      <br><br>
+      <div class="size-num">x 1</div>
+
 
       <input class="slider-btn" type="button" id="plus" value="+" />
 
       <div class="vertical-slider-wrapper">
           <input class="sizing-case-back" type="range" id="range" min="0.2" max="10.0" step="0.1" value="1" />
       </div>
-      
+
       <input class="slider-btn" type="button" id="minus" value="-" />
 
-    </div>            
+    </div>
+           
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
