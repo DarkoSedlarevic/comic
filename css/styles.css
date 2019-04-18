@@ -17,24 +17,29 @@ html {
 
 .resize-slider-container {
   position: fixed;
-  left: 50%;
-  bottom: 80px;
+  left: 0;
+  bottom: 0;
   z-index: 10000;
   padding: 10px;
   background: rgba(255,255,255, 0.9);
   box-shadow: 0 .15em 1.5em 0 rgba(0,0,0,.5),0 0 1em 0 rgba(0,0,0,.03);
   text-align:  center;
   width: 60px;
-  margin-left: -30px;
+  font-weight: 500;
+  /*margin-left: -30px;*/
+
+  border-radius: 30px 30px 30px 0;
   /*transform: translate(-50%, -250%) rotate(-90deg);*/
   /*border-radius: 20px;*/
   /*visibility: hidden;*/
-  display: none;
+  display: block;
 }
 .resize-slider-container .slider-btn {
-  padding: 5px;
-  border-radius: 5px;
-  font-size: 16px;
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: 500;
 }
 /*from (at the end): https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range*/
 .vertical-slider-wrapper {
@@ -50,23 +55,41 @@ html {
   transform-origin: 75px 75px;
 
 }
-
+.resize-slider-container .size-num {
+  position: relative;
+  /*position: relative;*/
+  /*top: -60px;*/
+  /*left:0;*/
+  top: -10px; /*pull up couse of parent padding 10px*/
+  left: -10px;
+  background: rgba(255,255,255, 0.9);
+  /*box-shadow: 0 .15em 1.5em 0 rgba(0,0,0,.5),0 0 1em 0 rgba(0,0,0,.03);*/
+  /*text-align:  center;*/
+  /*pull text in the middle with padding-top == just a quick hack*/
+  border:  2px solid silver;
+  padding-top: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  font-size: 14px;
+}
 
 /*fro test fixed color picker*/
 .color-container {
   position: fixed;
-  left: 50%;
-  bottom: 80px;
+  left: 0;
+  bottom: 0;
   z-index: 10000;
   padding: 10px;
-  background: rgba(255,255,255, 0.9);
+  background: rgba(255,255,255, 1);
   box-shadow: 0 .15em 1.5em 0 rgba(0,0,0,.5),0 0 1em 0 rgba(0,0,0,.03);
 
   width: 300px;
-  margin-left: -150px;
-  /*border-radius: 20px;*/
+  /*margin-left: -150px;*/
+
+  border-radius: 20px 20px 20px 0;
   /*visibility: hidden;*/
-  display: none;
+  display: block;
 }
 /*fuck picker max-width in ems so it can be "responsive" inside of my container -- why? i dont know :*/
 .pcr-app {
@@ -143,28 +166,40 @@ https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/*/
 
 
 /*controls menu*/
-.controls-menu {
-  position: absolute;
-  bottom:0;
+.controls-menu-container {
+  position: fixed;
   left: 0;
-  /*background-color: rgba(255,255,255,.2);*/
+  bottom: 30px;
+  /*background: pink;*/
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.controls-menu {
+  /*position: absolute;
+  bottom:0;
+  left: 0;*/
+  /*background-color: rgba(255,255,255,.8);
+  border-radius: 30px;*/
   overflow: auto;
   white-space: nowrap;
-  max-width: 90%;
+  /*max-width: 90%;*/
   height:  auto;
-  margin: 30px;
-  padding: 20px;
+  margin: 0 auto;
+  padding: 20px 0;
   z-index: 10000;
 }
 .controls-menu li, .controls-menu li a {
   display: inline;
-  padding: 10px;
-  /*border-radius: 30px;*/
+  padding: 10px 20px;
+  border-radius: 30px;
   margin: 5px;
-  /*background-color: magenta;*/
+  /*background-color: rgba(255,255,255,.5);*/
   text-decoration: none;
   color: #333;
-  font-size: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
   cursor: pointer;
 
 }
