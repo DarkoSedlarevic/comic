@@ -32,7 +32,7 @@ html {
   /*transform: translate(-50%, -250%) rotate(-90deg);*/
   /*border-radius: 20px;*/
   /*visibility: hidden;*/
-  display: block;
+  display: none;
 }
 .resize-slider-container .slider-btn {
   min-width: 30px;
@@ -89,7 +89,7 @@ html {
 
   border-radius: 20px 20px 20px 0;
   /*visibility: hidden;*/
-  display: block;
+  display: none;
 }
 /*fuck picker max-width in ems so it can be "responsive" inside of my container -- why? i dont know :*/
 .pcr-app {
