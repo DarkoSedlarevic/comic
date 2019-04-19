@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <!-- wrap everything for overflow elements x and y -->
+        <!-- wrap everything for overflow elements x and y -->
     <div class="screensaver-container">
         <!-- case back -->
         <div class="draggable case-back-container">
@@ -38,8 +38,15 @@
     </div>
 
     <!-- controls/menu -->
-    <div class="controls-menu-container">
-    <ul class="controls-menu" data-html2canvas-ignore="true">
+    <div class="controls-container" data-html2canvas-ignore="true">
+
+
+<div class="controls-menu-container">
+  <span class="menu-scroll-info" style="position:absolute; top:-20px; right:20px; font-size:10px;">hover menu with the mouse and scroll/or swipe on mobile</span>
+
+
+      <ul class="controls-menu">
+
         <li id="request-full-screen">Full Screen</li>
 
         <li><span class="color-btn wallpaper-background-color"></span></li>
@@ -51,8 +58,16 @@
         <li><span class="color-btn position-test case-back-background-color" data-picker-for="case-back-background-color"></span><!--Color 5 --></li>
 
         <li class="position-test" data-picker-for="case-back-color">Color 6</li>
+        <!--  Just icon  test same button -->
+        <li class="position-test" data-picker-for="case-back-color"><i class="gistro fas fa-tint fa-2x"></i></li>
+        <li class="position-test" data-picker-for="case-back-color"><i class="gistro fas fa-fill-drip fa-2x"></i></li>
+        <!-- end test -->
 
         <li class="resize-slider">Resize</li>
+        <!--  Just icon  test same button -->
+        <li class="resize-slider"><i class="fas fa-expand-arrows-alt fa-2x"></i></li>
+        <!-- end test -->
+
         <!-- <li>
           <input type="button" id="minus" value="-" />
           <input class="sizing-case-back" type="range" id="range" min="0.2" max="10.0" step="0.1" value="1" />
@@ -61,7 +76,14 @@
         </li> -->
         <li class="center-reset-translate" onclick="resetTranslate()">Center</li>
         <li class="bu" onclick="screenshotAndDownload()">Download</li>
+        <li class="">--</li>
+        <li class="">Buy t-shirt</li>
+        <li class="">info/manual</li>
+        <li class="">mailing list</li>
+        <li class="">Share</li>
+
     </ul>
+</div>
   </div>
 
     <!-- overlay test for "fake download loading"   -->
@@ -78,7 +100,7 @@
 
     <div class="resize-slider-container menu-pop-up">
 
-      <div class="size-num">x 1</div>
+      <div class="size-num">1 x</div>
 
 
       <input class="slider-btn" type="button" id="plus" value="+" />
@@ -90,6 +112,7 @@
       <input class="slider-btn" type="button" id="minus" value="-" />
 
     </div>
+    
            
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
