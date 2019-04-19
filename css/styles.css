@@ -167,34 +167,82 @@ https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/*/
 
 
 /*controls menu*/
-.controls-menu-container {
+.controls-container {
   position: fixed;
-  left: 0;
+  left: 5%;
   bottom: 30px;
   /*background: pink;*/
-  display: flex;
-  flex-direction: row;
-  width: 100%;
+  /*display: flex;*/
+  /*flex-direction: row;*/
+  width: 90%;
+  z-index: 10000;
 }
+.controls-menu-container {
+  background-color: rgba(255,255,255,.9);
+  box-shadow: 0 .15em 1.5em 0 rgba(0,0,0,.3),0 0 1em 0 rgba(0,0,0,.03);
+  border-radius: 30px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  /*z-index: 11000;*/
+}
+    @media screen and (min-width: 767px) {
+      .controls-menu-container {
+        width: 50%;
+      }
+    }
+/*menu corner shadow*/
+.controls-menu-container::before {
+  content: "";
+  /*background: #F4F4F4;*/
+  background: linear-gradient(to left, rgba(244, 244, 244, 0), white 65%);
+  /*height: 100%;*/
+  width: 50px;
+  height: 50px;
+  border-radius: 55px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.controls-menu-container::after {
+  content: "";
+  /*background: #F4F4F4;*/
+  background: linear-gradient(to right, rgba(244, 244, 244, 0), white 65%);
+  /*height: 100%;*/
+  width: 50px;
+  height: 50px;
+  border-radius: 55px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .controls-menu {
   /*position: absolute;
   bottom:0;
   left: 0;*/
-  /*background-color: rgba(255,255,255,.8);
+  /*background-color: rgba(255,255,255,.9);
+  box-shadow: 0 .15em 1.5em 0 rgba(0,0,0,.3),0 0 1em 0 rgba(0,0,0,.03);
   border-radius: 30px;*/
   overflow: auto;
   white-space: nowrap;
-  /*max-width: 90%;*/
+  /*max-width: 50%;*/
   height:  auto;
-  margin: 0 auto;
-  padding: 20px 0;
-  z-index: 10000;
+  /*add margin left and right to pull firs and last li item from corner shadow*/
+  margin: 0 20px;
+  padding: 10px 0 15px;
+  /*z-index: 110000;*/
+  overflow-x:hidden;
+  /*position: relative;*/
+}
+.controls-menu:hover {
+  /*box-shadow: 0 .15em 1.5em 0 rgba(0,0,0,.5),0 0 1em 0 rgba(0,0,0,.08);*/
 }
 .controls-menu li, .controls-menu li a {
   display: inline;
   padding: 10px 20px;
   border-radius: 30px;
-  margin: 5px;
+  margin: 0 5px;
   /*background-color: rgba(255,255,255,.5);*/
   text-decoration: none;
   color: #333;
@@ -211,7 +259,7 @@ https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/*/
   width:20px;
   height:20px;
   border-radius: 20px;
-  /*padding: 10px 10px;*/
+  padding: 0 0;
   box-shadow: 0 .15em 1.5em 0 rgba(0,0,0,.5),0 0 1em 0 rgba(0,0,0,.03);
 
   border: solid 2px rgba(255,255,255, 1);
