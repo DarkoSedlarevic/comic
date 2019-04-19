@@ -16,7 +16,7 @@ html {
 /*for test fixed resize slider */
 
 .resize-slider-container {
-  position: fixed;
+  position: absolute;
   left: 0;
   bottom: 0;
   z-index: 10000;
@@ -76,7 +76,7 @@ html {
 
 /*fro test fixed color picker*/
 .color-container {
-  position: fixed;
+  position: absolute;
   left: 0;
   bottom: 0;
   z-index: 10000;
