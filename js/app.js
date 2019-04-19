@@ -241,11 +241,11 @@ document.addEventListener('click', function (event) {
 
     // If the click happened inside the the container, bail
     //if user cliks  li button or color picker container do nothing
-    if (event.target.closest('.color-container, .position-test, .resize-slider-container, .resize-slider')) return;
+    if (event.target.closest('.color-container, .position-test')) return;
 
     // Otherwise, run our code...
     console.log('outside');
-    TweenLite.fromTo ($('.color-container, .resize-slider-container') , 0.3, {bottom:80, opacity:1}, {bottom:-300, opacity:1, display:'none'})  //animate with TweenLite
+    TweenLite.fromTo ($('.color-container') , 0.3, {bottom:90, opacity:1}, {bottom:-300, opacity:1, display:'none'})  //animate with TweenLite
 
 
 }, false);
@@ -257,8 +257,8 @@ document.addEventListener('click', function (event) {
 //   // Otherwise, run our code...
 //   console.log('outside');
 //   TweenLite.fromTo ($('.color-container') , 0.4, {bottom:80, opacity:1}, {bottom:0, opacity:0, display:'none'})  //animate with TweenLite
-//
-//
+
+
 // });
 
 
@@ -299,13 +299,13 @@ $('.position-test').each(function(index) {
   if(btnPosition.left + colorPickerWidth <=  bodyWidth) {
     //show container top left of the btn
     $('.color-container').css({"left" : btnPosition.left, "margin-left" : "10px" }); // add margin for li element padding
-    TweenLite.fromTo ($('.color-container') , 0.3, {bottom:0, opacity:0}, {bottom:80, opacity:1, display:'block'})  //animate with TweenLite
+    TweenLite.fromTo ($('.color-container') , 0.3, {bottom:-300, opacity:0}, {bottom:90, opacity:1, display:'block'})  //animate with TweenLite
   }
   else {
     // simulate css - left 50% - margin 50% of elements width - so i can change manualy in css difrent width's of container
     // $('.color-container').css({ 'left' : '50%', 'margin-left' : colorPickerHalfWidth }).show();
     $('.color-container').css({ 'left' : '50%', 'margin-left' : colorPickerHalfWidth });
-    TweenLite.fromTo ($('.color-container') , 0.3, {bottom:0, opacity:0}, {bottom:80, opacity:1, display:'block'})  //animate with TweenLite
+    TweenLite.fromTo ($('.color-container') , 0.3, {bottom:-300, opacity:0}, {bottom:90, opacity:1, display:'block'})  //animate with TweenLite
 
     // $('.color-container').addClass('color-container-center').toggle();
   }
@@ -327,8 +327,7 @@ testColor.on('change', (newColor) => {
   }
   else if(colorFor == 'wallpaper-background-color') {
       var colorString = newColor.toHEX().toString();
-      $('.wallpaper-background-color, .screensaver-container').css('backgroundColor', colorString);
-
+      $('.screensaver-container').css('backgroundColor', colorString);
   }
   else if(colorFor == 'case-back-background-color') {
       var colorString = newColor.toHEX().toString();
@@ -341,6 +340,8 @@ testColor.on('change', (newColor) => {
       var colorString = newColor.toHEX().toString();
       // $('.case-back-color').css('backgroundColor', colorString);
       $('.case-back .b, .case-back-serial .l').css("fill", colorString);
+      //font awsome icon
+      $('.gistro').css('color', colorString);
   }
   else{
  // if none of the above are TRUE then do nothing.
@@ -383,17 +384,37 @@ $('.resize-slider').each(function(index) {
 
   if(btnPosition.left + sliderContainerWidth <=  bodyWidth) {
     //show container top left of the btn
-    $('.resize-slider-container').css({"left" : btnPosition.left, "margin-left" : "10px" }); // add margin for li element padding
-    TweenLite.fromTo ($('.resize-slider-container') , 0.3, {bottom:-300, opacity:1}, {bottom:80, opacity:1, display:'block'})  //animate with TweenLite
+    $('.resize-slider-container').css({"left" : btnPosition.left, "margin-left" : "20px" }); // add margin for li element padding
+    TweenLite.fromTo ($('.resize-slider-container') , 0.3, {bottom:-300, opacity:1}, {bottom:90, opacity:1, display:'block'})  //animate with TweenLite
   }
   else {
     // simulate css - left 50% - margin 50% of elements width - so i can change manualy in css difrent width's of container
     // $('.color-container').css({ 'left' : '50%', 'margin-left' : colorPickerHalfWidth }).show();
     $('.resize-slider-container').css({ 'left' : '50%', 'margin-left' : sliderContainerHalfWidth });
-    TweenLite.fromTo ($('.resize-slider-container') , 0.3, {bottom:-300, opacity:1}, {bottom:80, opacity:1, display:'block'})  //animate with TweenLite
+    TweenLite.fromTo ($('.resize-slider-container') , 0.3, {bottom:-300, opacity:1}, {bottom:90, opacity:1, display:'block'})  //animate with TweenLite
 
     // $('.color-container').addClass('color-container-center').toggle();
  }
+
+
+
+// add remove event listener insted of always listen to document click
+ function gistroFunction() {
+   // If the click happened inside the the container, bail
+   //if user cliks  li button or color picker container do nothing
+   if (event.target.closest('.resize-slider-container, .resize-slider')) return;
+
+   // Otherwise, run our code...
+   console.log('outside');
+   TweenLite.fromTo ($('.resize-slider-container') , 0.3, {bottom:90, opacity:1}, {bottom:-300, opacity:1, display:'none'})  //animate with TweenLite
+
+   //remove document event listener
+    document.removeEventListener('click', gistroFunction);
+ }
+
+ document.addEventListener('click', gistroFunction);
+
+
 
   });
  });
@@ -434,7 +455,7 @@ $("#plus").click(function(){
       if ( newValuePlus > 100 ) return;
       $("#range").val(newValuePlus/10);
       TweenLite.to(caseBack, 1,{scale: newValuePlus/10});
-      sizeNum.innerText = "x " + newValuePlus/10;
+      sizeNum.innerText = newValuePlus/10 + ' x';
       console.log(newValuePlus/10)
   });
   $("#minus").click(function(){
@@ -442,7 +463,7 @@ $("#plus").click(function(){
       if ( newValueMinus < 0.2 ) return;
       $("#range").val(newValueMinus);
       TweenLite.to(caseBack, 1,{scale: newValueMinus});
-      sizeNum.innerText = "x " + newValueMinus;
+      sizeNum.innerText = newValueMinus + ' x';
       console.log(newValueMinus)
   });
 
@@ -487,6 +508,25 @@ function screenshotAndDownload() {
         });
         //hide overlay after save
         overlayDiv.style.visibility = 'hidden';
+
+        //just a test for new content. For example: thanks for using now please buy a tshirt :)
+        // $('.controls-menu-container').hide();
     });
 
 };
+
+
+//mouse whell jquery plugin
+// for menu list mouse whell scroling on desktop
+// https://github.com/jquery/jquery-mousewheel
+// https://codepen.io/CalvinMorett/pen/bYGdNv
+$(document).ready(function() {
+$('.controls-menu').mousewheel(function(e, delta) {
+this.scrollLeft -= (delta * 50);
+e.preventDefault();
+
+//hide menu info this is just test
+$('.menu-scroll-info').hide('slow');
+// ===============================
+});
+});
