@@ -196,9 +196,8 @@ https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/*/
   content: "";
   /*background: #F4F4F4;*/
   background: linear-gradient(to left, rgba(244, 244, 244, 0), white 65%);
-  /*height: 100%;*/
+  height: 100%;
   width: 50px;
-  height: 50px;
   border-radius: 55px;
   position: absolute;
   top: 0;
@@ -208,9 +207,8 @@ https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/*/
   content: "";
   /*background: #F4F4F4;*/
   background: linear-gradient(to right, rgba(244, 244, 244, 0), white 65%);
-  /*height: 100%;*/
+  height: 100%;
   width: 50px;
-  height: 50px;
   border-radius: 55px;
   position: absolute;
   top: 0;
