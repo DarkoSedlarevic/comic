@@ -18,7 +18,7 @@ html {
    position: absolute;
    top:0;
    left:0;
-   /*width: 100%;*/
+   width: 100%;
  }
 .image-toggle-index {
   z-index: 3;
