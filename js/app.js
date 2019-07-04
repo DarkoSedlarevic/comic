@@ -966,20 +966,6 @@ function screenshotAndDownload() {
 };
 
 
-//mouse whell jquery plugin
-// for menu list mouse whell scroling on desktop
-// https://github.com/jquery/jquery-mousewheel
-// https://codepen.io/CalvinMorett/pen/bYGdNv
-$(document).ready(function() {
-$('.controls-menu').mousewheel(function(e, delta) {
-this.scrollLeft -= (delta * 50);
-e.preventDefault();
-
-//hide menu info this is just test
-$('.menu-scroll-info').hide('slow');
-// ===============================
-});
-});
 
 
 
