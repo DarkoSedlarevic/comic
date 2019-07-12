@@ -18,7 +18,7 @@ html {
    position: absolute;
    top:0;
    left:0;
-   width: 100%;
+   /*width: 100%;*/
  }
 .image-toggle-index {
   z-index: 3;
@@ -234,6 +234,7 @@ https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/*/
   margin: 0 auto;
   position: relative;
   /*z-index: 11000;*/
+  height: 50px;
 }
     @media screen and (min-width: 767px) {
       .controls-menu-container {
@@ -278,11 +279,18 @@ https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/*/
   /*max-width: 50%;*/
   height:  auto;
   /*add margin left and right to pull firs and last li item from corner shadow*/
-  margin: 0 20px;
+  margin-left: 20px;
+  margin-right:  20px;
   padding: 10px 0 15px;
   /*z-index: 110000;*/
-  
+  /*overflow-x:hidden;*/
   /*position: relative;*/
+
+/*hide scroll bars with margin and padding*/
+  overflow-x:scroll;
+  margin-bottom: -20px; /* maximum width of scrollbar 50px */
+  padding-bottom: 20px; /* maximum width of scrollbar 50px*/
+
 }
 .controls-menu:hover {
   /*box-shadow: 0 .15em 1.5em 0 rgba(0,0,0,.5),0 0 1em 0 rgba(0,0,0,.08);*/
