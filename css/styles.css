@@ -126,7 +126,7 @@ html {
   background: rgba(255,255,255, 1);
   /*box-shadow: 0 .15em 1.5em 0 rgba(0,0,0,.5),0 0 1em 0 rgba(0,0,0,.03);*/
 
-  width: 300px;
+  width: auto;
   /*margin-left: -150px;*/
 
   border-radius: 20px 20px 20px 20px;
