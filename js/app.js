@@ -3,6 +3,7 @@ const wallpaperBackgroundColor = new Pickr({
     el: '.wallpaper-background-color',
     //cyan
     default: '#00ffff',
+    theme: 'monolith', // or 'classic', or 'nano'
     // show color preview on button
     comparison: false,
     //use as button
@@ -169,6 +170,7 @@ const testColor = new Pickr({
     el: '.test-picker',
     //white
     default: '#ff00ff',
+    theme: 'monolith', // or 'classic', or 'nano'
     // show color preview on button
     comparison: false,
     //use as button
@@ -862,6 +864,7 @@ $('[data-function=color-pickr]').each(function(index) {
 
     const pickr = new Pickr({
         el: pickrElement,
+        theme: 'nano', // or 'monolith', or 'classic'
         //white
         default: defaultColor,
         // show color preview on button
