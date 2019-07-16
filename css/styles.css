@@ -157,6 +157,13 @@ html {
   /*ADDED FOR IMAGE BACKGROUND Z INDEX - PUSH BACK*/
   position: relative;
   z-index: 2;
+
+}
+/*TESTING ADDED FOR IMAGE BACKGROUND CROPING-ukoliko slika kada se uploduje porvi put je veca od ekrana kada se sacuvava screenshot cropuje sve sto je u pocetku prelazilo ivice?!!?!??! */
+.screensaver-container img {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100vh;
 }
 .download-overlay {
   background:  rgba(255,255,255,0.8);
