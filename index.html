@@ -50,8 +50,15 @@
 
     <!-- Style sheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:200,400,500"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.css"/>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.css"/> -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"/> <!-- 'classic' theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/monolith.min.css"/> <!-- 'monolith' theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/> <!-- 'nano' theme -->
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
     <link href="css/styles.css" rel="stylesheet"/>
 </head>
 
@@ -151,6 +158,7 @@
         <li class="" data-function="menu-poper" data-target-element="#test-image-controls">IMG</li>
         <li data-function="menu-poper" data-target-element="#resize-image-slider">Resize IMG</li>
 <li class="">|</li>
+        <li data-function="menu-poper" data-target-element="#rotate-image-slider">rotate img</li>
 
 
         <li class="bu" onclick="screenshotAndDownload()">Download</li>
@@ -195,11 +203,23 @@
           <div class="slider-value">1 x</div>
           <input class="slider-btn slider-plus-btn" type="button" value="+" />
           <div class="vertical-slider-wrapper">
-              <input id="range" class="sizing-case-back slider-something" type="range" min="-10" max="10.0" step="0.1" value="1" />
+              <input id="range" class="sizing-case-back slider-something" type="range" min="-10" max="10.0" step="0.1" value="0" />
           </div>
           <input class="slider-btn slider-minus-btn" type="button" value="-" />
 
         </div>
+
+        <div id="rotate-image-slider" class="resize-slider-container" data-function="slider" data-slider-function="rotate" data-target-element="#background-image">
+
+          <div class="slider-value">1 x</div>
+          <input class="slider-btn slider-plus-btn" type="button" value="+" />
+          <div class="vertical-slider-wrapper">
+              <input id="range" class="sizing-case-back slider-something" type="range" min="-180" max="180" step="45" value="0" />
+          </div>
+          <input class="slider-btn slider-minus-btn" type="button" value="-" />
+
+        </div>
+
 <!--  test poper plain menu with list-->
     <div id="test-poper-menu" class="color-container">
       <div style="padding:10px 20px; margin: 10px;">
@@ -278,13 +298,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/utils/Draggable.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/CSSPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/easing/EasePack.min.js"></script>
-   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
 
 
     <script src="js/screenfull.min.js"></script>
     <script src="js/FileSaver.js"></script>
     <script src="js/html2canvas.min.js"></script>
+
     <script src="js/app.js"></script>
 </body>
 </html>
