@@ -295,8 +295,8 @@ https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/*/
 
 /*hide scroll bars with margin and padding*/
   overflow-x:scroll;
-  margin-bottom: -20px; /* maximum width of scrollbar 50px */
-  padding-bottom: 20px; /* maximum width of scrollbar 50px*/
+  margin-bottom: -50px; /* maximum width of scrollbar 50px */
+  padding-bottom: 50px; /* maximum width of scrollbar 50px*/
 
 }
 .controls-menu:hover {
