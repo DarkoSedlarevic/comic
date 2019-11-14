@@ -979,10 +979,16 @@ this.scrollLeft -= (delta * 50);
 e.preventDefault();
 
 //hide menu info this is just test
-$('.menu-scroll-info').hide('slow');
+//$('.menu-scroll-info').hide('slow');
 // ===============================
 });
 });
+
+//hide menu explanation on menu scroll with on scroll event:
+$('.controls-menu').on('scroll', function() {
+     $('.menu-scroll-info').css({ 'color' : 'red'});
+     $('.menu-scroll-info').hide('slow');
+ })
 
 
 
