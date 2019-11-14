@@ -126,7 +126,7 @@ html {
   background: rgba(255,255,255, 1);
   /*box-shadow: 0 .15em 1.5em 0 rgba(0,0,0,.5),0 0 1em 0 rgba(0,0,0,.03);*/
 
-  width: auto;
+   width: auto;
   /*margin-left: -150px;*/
 
   border-radius: 20px 20px 20px 20px;
@@ -196,12 +196,20 @@ https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/*/
     top: 0;
     left: 0;
 }*/
-
+.speed-timer-container {
+  position: relative;
+  z-index: 4;
+  width: 162px;
+  height: 30px;
+  transform: scale(1);
+  /*add overflow:hidden to clip box corners. becouse default is visible so elemnt corners are "visible" and dragging is posible outside of "circle"*/
+  overflow: hidden;
+}
 /*change fill class name to somethnig like case back color*/
 .case-back .b {
   fill: magenta;
 }
-.case-back{
+.case-back {
   /*add little scale becouse of backgraound 1px padding */
   transform: scale(1.01);
 }
@@ -226,9 +234,10 @@ https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/*/
 .controls-container {
   position: fixed;
   left: 5%;
-  bottom: 30px;
+  bottom: 50px;
   /*background: pink;*/
   /*display: flex;*/
+  overflow: hidden;
   /*flex-direction: row;*/
   width: 90%;
   z-index: 10000;
@@ -295,8 +304,9 @@ https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/*/
 
 /*hide scroll bars with margin and padding*/
   overflow-x:scroll;
-  margin-bottom: -50px; /* maximum width of scrollbar 50px */
-  padding-bottom: 50px; /* maximum width of scrollbar 50px*/
+   /* maximum width of scrollbar 50px */
+   /*margin-bottom: -0px;*/
+  padding-bottom: 13px; /* maximum width of scrollbar 50px*/
 
 }
 .controls-menu:hover {
