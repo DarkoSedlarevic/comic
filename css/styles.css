@@ -310,7 +310,7 @@ https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/*/
 
   /*taken from and on the final changes check: https://css-tricks.com/almanac/properties/s/scrollbar-width/*/
   scrollbar-width: thin;
-  /*scrollbar-color: red yellow;*/
+  scrollbar-color: red white;
 }
 @supports(scrollbar-width: thin) {
   .controls-menu {
