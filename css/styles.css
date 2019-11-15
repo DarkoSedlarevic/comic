@@ -234,7 +234,7 @@ https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/*/
 .controls-container {
   position: fixed;
   left: 5%;
-  bottom: 50px;
+  bottom: 30px;
   /*background: pink;*/
   /*display: flex;*/
   overflow: hidden;
@@ -305,10 +305,27 @@ https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/*/
 /*hide scroll bars with margin and padding*/
   overflow-x:scroll;
    /* maximum width of scrollbar 50px */
-   /*margin-bottom: -0px;*/
+   /*margin-bottom: -13px;*/
   padding-bottom: 13px; /* maximum width of scrollbar 50px*/
 
+  /*taken from and on the final changes check: https://css-tricks.com/almanac/properties/s/scrollbar-width/*/
+  scrollbar-width: thin;
+  /*scrollbar-color: red yellow;*/
 }
+@supports(scrollbar-width: thin) {
+  .controls-menu {
+    /*margin-bottom: -5px;*/
+    padding-bottom: 16px;
+  }
+  @media screen and (min-width: 460px)  {
+    .controls-menu {
+      /*margin-bottom: -5px;*/
+      padding-bottom: 8px;
+    }
+  }
+}
+
+
 .controls-menu:hover {
   /*box-shadow: 0 .15em 1.5em 0 rgba(0,0,0,.5),0 0 1em 0 rgba(0,0,0,.08);*/
 }
