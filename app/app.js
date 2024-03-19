@@ -63,7 +63,7 @@ var loadFile = function(event) {
     var output = document.getElementById('output');
     output.src = URL.createObjectURL(event.target.files[0]);
     let button = document.getElementById('nextStep2')
-        uploadVoice = new Audio('voice/nice-one.mp3');
+        uploadVoice = new Audio('https://github.com/DarkoSedlarevic/comic/blob/master/app/voice/nice-one.mp3?raw=true');
         // opacity = document.getElementById('change-opacity')
     // opacity.classList.add("active")
     button.classList.add("animate-d")
@@ -110,7 +110,7 @@ player.onended = function() {
 document.getElementById("player").style.display = "none";
 
 //play happy music
-let happyMusic = new Audio('elevator.mp3');
+let happyMusic = new Audio('https://github.com/DarkoSedlarevic/comic/blob/master/app/elevator.mp3?raw=true');
 // loop
 // happyMusic.onended = function() {
  // happyMusic.play()
