@@ -5,7 +5,7 @@
 var   app = document.getElementById("app");
         step1 = document.getElementById("step-1");
         appWrap = document.getElementById("app-wrap");
-        uploadVoice = new Audio('voice/hello.mp3');
+        uploadVoice = new Audio('voice/hello.mp3?raw=true');
 
 
            appWrap.classList.add("active");
