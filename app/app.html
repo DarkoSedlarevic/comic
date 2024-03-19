@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pop It</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+
+    <video id="player" preload="auto"  width="100%" height="auto">         
+      <source src="0307.mov" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div id="app-wrap" class="app-wrap">
+      <div id="app" class="app">
+
+        <div id="step-1" class="step">
+            <header>
+            <h3 class="animate-a">Step 1</h3>
+            <p class="animate-b">Upload your file (jpg, png).</p>
+            </header>
+            <div>
+              <div class="upload animate-c">
+                  <input id="upload-btn" type="file" accept="image/*" onchange="loadFile(event)">  
+                  <img id="output" class="image-preview" src="../images/upload-pencil-outline.svg"/>
+              </div>
+
+              <div class="file-upload-notice">
+                  <p class="animate-d">
+                    Click on plus icon to browse and choose the file you want to upload.
+                    <br>Maximum file size - 1GB.
+                  </p>
+              </div>
+            </div>
+            <button id="nextStep2" onclick="nextStep2()" disabled>Next step</button>
+        </div>
+    
+    
+    
+        <div class="step" id="step-2">
+            <header>
+            <h3 class="animate-a">Step 2</h3>
+            <p class="animate-b">Choose level of pop</p>
+            </header>
+            <fieldset onchange="handleChange()">
+                <input class="hidden radio-label" type="radio" id="level1" name="level" value="level1">
+                <label class="button-label animate-c" for="level1"><p>Pop it light</p></label> <br>
+                <input class="hidden radio-label" type="radio" id="level2" name="level" value="level2">
+                <label class="button-label animate-d" for="level2"><p>Pop it hard</p></label> <br>
+                <input class="hidden radio-label" type="radio" id="level3" name="level" value="level3">
+                <label class="button-label animate-e" for="level3"><p>Pop it harder</p></label> <br>
+                <input class="hidden radio-label" type="radio" id="level4" name="level" value="level4">
+                <label class="button-label animate-f" for="level4"><p>Pop it level pro</p></label>
+            </fieldset>
+            <button id="nextStep3" onclick="nextStep3()" disabled>Next step</button>
+        </div>
+    
+    
+        <div class="step" id="step-3">
+            <header>
+            <h3 class="animate-a">Step 3</h3>
+            <p class="animate-b">Are you ready for the magic? Send your request to AI. &#128071;</p>
+            </header>
+            <button class="animate-c" onclick="makeItPop()">Make it pop</button>
+        </div>
+    
+    
+        <div class="step" id="step-4">
+    
+            <div id="loading">
+              <div class="loading"><img src="../images/loading.svg" alt=""></div>
+              <p>Sending your request to AI</p> 
+            </div>
+            <div id="message">
+              <div id="message-content">
+                <p>Every time someone says "make it pop!" somewhere in the world, one tortured designer dies.</p>
+                <p>Be considerate towards designers, try to provide them with constructive briefs and feedback.</p>
+                <p class="start-sunshine" onclick="sunIsShining()">Don't click me...</p>
+              </div>
+              <div  id="tears">
+                <img class="tear-one" src="../images/tears.svg" alt="">
+                <img class="tear-two" src="../images/tears.svg" alt="">
+                <img class="tear-three" src="../images/tears.svg" alt="">
+              </div>
+            </div>
+
+        </div>
+
+        <!-- sun is shining -->
+        <div class="step" id="step-5">
+          <div class="complaints">
+            <p>For complaints and trauma costs you may contact me by email: no.one.will.answer@gmail.com</p>
+          </div>
+          <div class="clouds">
+            <svg width="361" height="84" viewBox="0 0 361 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="clouds">
+              <g id="clouds-one">
+              <path id="Vector 180" d="M34.8601 60.2218C25.5124 60.2218 8.25618 62.6243 3.4713 51.8583C1.5092 47.4436 3.5387 38.6889 6.25912 35.1314C11.2829 28.5619 19.4599 24.0983 27.4259 22.328C30.6949 21.6016 34.2917 21.1923 37.648 21.1923C38.4813 21.1923 43.6514 22.1215 43.9464 21.915C48.9013 18.4466 53.7055 14.3765 58.8148 10.9702C66.8878 5.58823 89.0375 -5.47564 93.3529 9.62795C94.2086 12.6231 96.7608 15.0371 98.0509 17.9398C99.0306 20.1441 98.7626 21.1923 101.355 21.1923C105.657 21.1923 109.959 21.1923 114.262 21.1923C121.792 21.1923 129.001 21.2636 132.434 28.9879C134.172 32.8974 135.508 39.726 132.847 43.9079C128 51.5244 118.218 52.5702 110.596 55.1108C96.2049 59.9079 78.8862 63.0097 63.6677 63.0097C58.1092 63.0097 52.4908 63.0097 47.1094 63.0097" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round"/>
+              <path id="Vector 181" d="M189.12 53.7169C184.341 53.7169 182.645 54.849 178.691 57.434C174.615 60.0994 161.863 64.8926 162.171 70.4438C162.45 75.4674 174.94 78.7199 178.588 79.7366C186.386 81.9098 194.497 81.5951 202.543 81.5951C209.106 81.5951 216.852 79.4694 221.645 74.6772C223.15 73.1722 228.254 66.5562 226.085 64.1454C217.308 54.3933 202.785 54.6461 190.979 54.6461" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round"/>
+              <path id="Vector 182" d="M269.605 11.4348C274.246 8.22187 281.841 4.92979 287.623 4.51682C293.647 4.08656 304.284 3.35426 307.551 9.52458C309.461 13.1319 311.085 15.4833 311.733 19.695C312.012 21.5136 310.689 26.7678 313.178 26.7678C318.149 26.7678 324.763 23.9526 329.75 23.0507C334.77 22.1429 344.035 20.3574 348.749 23.0507C353.235 25.6142 355.15 26.4491 356.906 31.4658C357.994 34.5761 359.948 41.6055 356.286 43.9594C337.753 55.8737 310.926 57.4339 289.688 57.4339C275.396 57.4339 254.549 62.2224 246.322 47.2635C240.178 36.093 247.478 25.0544 256.028 18.4043" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round"/>
+              </g>
+              <g id="clouds-two">
+              <path id="Vector 180_2" d="M34.5855 78.8231C25.2378 78.8231 7.98152 81.2256 3.19664 70.4597C1.23454 66.045 3.26405 57.2902 5.98446 53.7327C11.0082 47.1632 19.1853 42.6996 27.1513 40.9294C30.4203 40.2029 34.0171 39.7936 37.3733 39.7936C38.2066 39.7936 43.3767 40.7228 43.6717 40.5164C48.6267 37.0479 53.4308 32.9778 58.5401 29.5716C66.6132 24.1895 88.7629 13.1257 93.0782 28.2293C93.934 31.2244 96.4861 33.6385 97.7762 36.5411C98.7559 38.7455 98.4879 39.7936 101.08 39.7936C105.382 39.7936 109.685 39.7936 113.987 39.7936C121.517 39.7936 128.726 39.8649 132.159 47.5892C133.897 51.4987 135.234 58.3274 132.572 62.5092C127.726 70.1257 117.943 71.1715 110.321 73.7121C95.9303 78.5092 78.6115 81.611 63.393 81.611C57.8345 81.611 52.2162 81.611 46.8348 81.611" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round"/>
+              <path id="Vector 181_2" d="M188.152 1.99615C183.372 1.99615 181.677 3.12834 177.723 5.71326C173.647 8.37868 160.894 13.1719 161.203 18.7231C161.482 23.7467 173.972 26.9992 177.62 28.0159C185.418 30.1891 193.529 29.8744 201.575 29.8744C208.137 29.8744 215.884 27.7487 220.676 22.9565C222.181 21.4515 227.286 14.8355 225.116 12.4247C216.339 2.67258 201.817 2.92543 190.01 2.92543" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round"/>
+              <path id="Vector 182_2" d="M269.606 34.8823C274.247 31.6694 281.842 28.3774 287.623 27.9644C293.647 27.5341 304.284 26.8018 307.551 32.9722C309.461 36.5795 311.085 38.9308 311.733 43.1426C312.013 44.9612 310.69 50.2154 313.178 50.2154C318.149 50.2154 324.763 47.4002 329.75 46.4983C334.77 45.5905 344.036 43.805 348.749 46.4983C353.235 49.0617 355.15 49.8967 356.906 54.9134C357.995 58.0237 359.948 65.053 356.286 67.407C337.753 79.3213 310.927 80.8815 289.688 80.8815C275.396 80.8815 254.55 85.67 246.322 70.711C240.178 59.5406 247.478 48.502 256.028 41.8519" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round"/>
+              </g>
+              </g>
+              </svg>
+                         
+          </div>
+          <div class="sunshine-day">
+            <svg width="246" height="104" viewBox="0 0 246 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="rising-sun">
+              <mask id="mask0_158_271" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-1" y="0" width="247" height="104">
+              <path id="Vector 183" d="M9.0354 100.003H-0.00317383L3.23798 0.0195312H245.608V17.6968V60.7747V97.3721L242.764 98.864L237.636 98.6309L228.032 99.4235L219.826 100.216L206.12 100.915L181.97 101.708L165.699 102.127L146.585 102.827L129.288 103.619L116.887 103.992H95.1151H88.2618L77.6119 103.738L63.255 103.085L50.8558 102.432L35.4112 101.562L9.0354 100.003Z" fill="black"/>
+              </mask>
+              <g mask="url(#mask0_158_271)">
+              <path id="horizon" d="M5.03223 96.852C49.5753 100.074 94.0282 103.237 138.681 100.694C165.772 99.1505 192.908 99.4057 220.001 97.6508C227.267 97.1801 234.889 95.6285 242.182 96.1561" stroke="#1E1E1E" stroke-width="5" stroke-linecap="round"/>
+              <path id="sun" d="M71.2507 86.3016C72.1823 80.0892 80.0721 64.5556 83.1586 59.0664C86.6933 52.7802 91.1529 48.324 98.1943 45.0774C108.916 40.1337 121.073 40.0315 132.929 40.6517C147.277 41.4022 158.645 50.2566 166.655 60.1187C170.799 65.2204 174.211 71.8878 176.052 77.9453C176.658 79.9383 177.61 81.8124 178.106 83.7947C178.298 84.5637 179.324 87.8409 179.324 86.3016" stroke="#1E1E1E" stroke-width="5" stroke-linecap="round"/>
+              <g id="rays">
+              <path id="Vector 161" d="M124.167 24.4792C124.167 18.8062 124.829 12.5377 123.052 7.20959" stroke="#1E1E1E" stroke-width="5" stroke-linecap="round"/>
+              <path id="Vector 162" d="M191.574 77.3883C188.848 77.3883 196.747 75.5999 199.157 74.3244C202.414 72.6001 206.512 71.2949 209.958 70.1462" stroke="#1E1E1E" stroke-width="5" stroke-linecap="round"/>
+              <path id="Vector 166" d="M178.761 26.6938C176.319 29.1357 174.071 31.2065 172.107 34.1526C171.131 35.6161 168.734 38.9354 168.734 40.621" stroke="#1E1E1E" stroke-width="5" stroke-linecap="round"/>
+              <path id="Vector 167" d="M155.921 17.2234C154.095 19.5059 153.644 22.974 152.021 25.4559C151.1 26.865 149.765 29.0065 149.236 30.5934" stroke="#1E1E1E" stroke-width="5" stroke-linecap="round"/>
+              <path id="Vector 175" d="M183.417 61.8494C186.876 55.8575 193.501 53.3999 198.602 50.0321" stroke="#1E1E1E" stroke-width="5" stroke-linecap="round"/>
+              <path id="Vector 176" d="M55.6052 77.6166C58.3416 77.6166 50.4123 75.8214 47.9939 74.541C44.7245 72.8102 40.6108 71.5001 37.1516 70.347" stroke="#1E1E1E" stroke-width="5" stroke-linecap="round"/>
+              <path id="Vector 177" d="M68.4669 26.7297C70.918 29.1808 73.1747 31.2596 75.1462 34.2168C76.1256 35.6859 78.5325 39.0178 78.5325 40.7097" stroke="#1E1E1E" stroke-width="5" stroke-linecap="round"/>
+              <path id="Vector 178" d="M91.3941 17.2234C93.227 19.5145 93.6796 22.9958 95.3085 25.4871C96.2334 26.9016 97.5735 29.0512 98.1045 30.6442" stroke="#1E1E1E" stroke-width="5" stroke-linecap="round"/>
+              <path id="Vector 179" d="M63.7936 62.0187C60.321 56.004 53.671 53.5371 48.5508 50.1565" stroke="#1E1E1E" stroke-width="5" stroke-linecap="round"/>
+              </g>
+              </g>
+              </g>
+            </svg>              
+            <p><b>Have a nice day!</b></p>
+          </div>
+            
+        </div>
+
+      </div>
+
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

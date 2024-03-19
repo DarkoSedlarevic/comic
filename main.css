@@ -1,0 +1,550 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  /* display: block;
+  max-width: 100%; */
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Remove mobile blue highlight
+*/
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+/* ================================== */
+
+
+/* Fonts */
+@font-face {
+  font-family: 'comic sans ms regular';
+  src: url('fonts/comic-sans-ms/comic_sans_ms-webfont.woff2') format('woff2'),
+       url('fonts/comic-sans-ms/comic_sans_ms-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'comic sans ms bold';
+  src: url('fonts/comic-sans-ms/comic_sans_ms_bold-webfont.woff2') format('woff2'),
+       url('fonts/comic-sans-ms/comic_sans_ms_bold-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'free sans';
+  src: url('fonts/free-sans/freesans.woff2') format('woff2'),
+       url('fonts/free-sans/freesans.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'free sans bold';
+  src: url('fonts/free-sans/freesansbold.woff2') format('woff2'),
+       url('fonts/free-sans/freesansbold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Vars */
+:root {
+  /* fonts */
+  --font-regular: 'comic sans ms regular';
+  --font-bold: 'comic sans ms bold';
+  --fluid-18-24: clamp(1.125rem, 0.9rem + 1vi, 1.5rem);
+  --vertical-space: calc(var(--fluid-18-24) * 1.5);
+  /* Colors */
+  --black: #1E1E1E;
+  --pink: #F5D9E8;
+  --blue: #C3D0E8;
+  --green: #DAE6C2;
+  --yellow: #FFD749;
+} 
+:root.no-comic {
+  --font-regular: 'free sans';
+  --font-bold: 'free sans bold';
+}
+body {
+  font-family: var(--font-regular);
+  padding-inline: 20px;
+  color: var(--black);
+  background: var(--yellow);
+}  
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--blue);
+  }
+}
+body.light {
+
+  background-color: var(--yellow);
+}
+
+
+/* Typography */
+h1, h2, h3 {
+  font-family: var(--font-bold);
+  line-height: 1.2;
+}
+h1, h2 {
+  font-size: clamp(2.625rem, 1.8rem + 3.6667vi, 4rem); /* fluid 42/64 */
+  margin-block-end: calc(var(--vertical-space) * 2);
+  letter-spacing: -0.01em;
+}
+p {
+  font-size: var(--fluid-18-24);
+  line-height: 1.5;
+  margin-block-end: var(--vertical-space);
+}
+small {
+  font-size: --fluid-14-16: clamp(0.875rem, 0.8rem + 0.3333vi, 1rem);
+}
+small.tinted {
+  opacity: .5;
+}
+b, strong {
+  font-family: var(--font-bold);
+}
+/* Buttons */
+button {
+  position: relative;
+  margin-block-end: 0.5rem;
+  font-size: var(--fluid-18-24);
+  padding-inline: 1.5rem;
+  padding-block: 0.8rem;
+  color: var(--black);
+  font-family: var(--font-bold);
+  border: none;
+  border-radius: 3rem;
+  background-color: rgba(255,255,255,.9);
+  min-width: 270px;
+  text-transform:  uppercase;
+}
+/* add arrow to the button */
+button::after {
+  content: url(images/short-arrow.svg);
+  margin-inline-start: 1rem;
+  vertical-align: middle;
+}
+button:hover {
+  cursor: pointer;
+  transform: scale(.98);
+  background-color: rgba(255,255,255,.7);
+}
+/* add pencil line around the button */
+button::before {
+  content:"";
+  position: absolute;
+  inset: -3px;
+  /* add preserveAspectRatio="none" to svg so it can be streched */
+  background: url(images/button-background.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+} 
+/* end buttons */
+/* ---------------- */
+.main-header {
+  max-width: 960px;
+  margin-inline: auto;
+  padding-block: var(--vertical-space);
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.main-header ul {
+  list-style: none;
+  display: flex;
+  gap: var(--vertical-space);
+}
+/* Change font drop down and switching */
+/* playing with display class */
+.no-display {
+  display: none;
+}
+#i-want-helvetica {
+  position: relative;
+}
+.change-font {
+  cursor: pointer;
+}
+.change-font:hover {
+  text-decoration: underline;
+}
+#change-font-notice {
+  position: absolute;
+  width: 340px;
+  top:48px;
+  right: -120px;
+  padding: var(--vertical-space);
+  border-radius: var(--vertical-space);
+  background: var(--black);
+  color: #FFFFFF;
+  z-index: 2;
+  box-shadow: -6px 6px 0px 0px rgba(255, 255, 255, .9)
+}
+#change-font-notice::before {
+  content: "";
+  position: absolute;
+  top:-24px;
+  height:28px;
+  width:48px;
+  border-top:28px solid transparent;
+  border-righ:0px solid transparent;
+  border-left:48px solid var(--black);
+  z-index: 2;
+  left:calc(50% + 28px)
+}
+#change-font-notice p {
+  font-size: 1rem;
+  margin-block-end: 1.5rem;
+  opacity: 0.6;
+}
+#change-font-notice p:last-child {
+  margin-block-end: 0;
+}
+.yes, .no {
+  text-decoration: underline;
+  /* opacity: 0.5; */
+}
+.yes:hover, .no:hover {
+  opacity: 1 !important;
+}
+/* find icons@ https://iconduck.com/emojis/16761/reversed-hand-with-middle-finger-extended-tone-5 */
+.yes {
+  text-transform: uppercase;
+  /* crnacki */
+  /* cursor: url('data:image/svg+xml,<svg width="42" height="42" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="m13.5 31.5c0-2.6 2.4-4.7 5.3-4.7h.1c2.9 0 6.3 2.1 6.3 4.7l-2.6-25.1c0-2.4 3-4.4 6.9-4.4h.1c3.8 0 6.9 2 6.9 4.4l-1.2 24.6c0-2.6 2.4-4.7 5.3-4.7h.1c2.9 0 5.3 2.1 5.3 4.7v2.7c.5-1.9 2.4-3.2 4.6-2.7 4.5 1.2 3.6 4.8 4.1 8.7.5 4.8 1.7 7.9 1.3 9.6-1 3.7-3.7 3.2-5.1 4.2s-1.8 2.6-2.9 3.6c-2.2 2-6.2 1.6-9.8 2.5-3.1.8-5.9 2.6-8.3 2.3-2.7-.3-3.4-2.6-6.4-4s-7.1-.7-8.3-3.1c-2.3-4.8-1.7-23.3-1.7-23.3" fill="%238a6859"/><g fill="%23705041"><path d="m13.5 31.5c0-1.4.7-2.7 1.8-3.5-1.9 2.4-.6 19.4 1.7 24.2 1.2 2.4 5.3 1.7 8.3 3.1s3.7 3.8 6.4 4c2.4.3 5.2-1.4 8.3-2.1 3.6-.9 6.1-.6 8.3-2.6 1.1-1 1.6-2.5 3.8-3.2 1.6-.5 2.7-1 3.9-2.2v.1c-1 3.7-3.7 3.2-5.1 4.2s-1.8 2.6-2.9 3.6c-2.2 2-6.2 1.6-9.8 2.5-3.1.8-5.9 2.6-8.3 2.3-2.7-.3-3.4-2.6-6.4-4s-7.1-.7-8.3-3.1c-2.3-4.8-1.7-23.3-1.7-23.3"/><path d="m22.6 5.3c-.9 3.8 2.5 38.4 2.5 38.4 0 2.5 1.3 1.5 1.3-1 0 0-3.6-32.5-2.6-37.3.4-2 1.8-2.6 4.2-3.3 0 0-4.6.2-5.4 3.2m14.4 37v-13c0-.7.1-1.4.5-2-1.3.9-2.1 2.2-2.1 3.7v13c-.1 2.7 1.6.9 1.6-1.7m10.4 1.3v-10.4c0-.6.1-1.2.4-1.8-1.1.8-1.9 2-1.9 3.4v10.4c0 2.3 1.5.7 1.5-1.6"/><path d="m34.4 10.8c.8-5.3-1.7-5.5-4.8-5.5s-5.6.2-4.8 5.5c.3 2 2.4 2.7 4.8 2.7s4.5-.8 4.8-2.7"/></g><path d="m34.5 9.9c.8-5.7-1.7-5.9-4.9-5.9s-5.7.2-4.9 5.8c.3 2.1 2.4 2.8 4.9 2.8s4.6-.7 4.9-2.7" fill="%23ffe8dc"/><path d="m15.3 53.6c-3.6-4.2-8.3-6.4-7.1-9.5 1-3 3.1-2.9 5.8-6.3z" fill="%23705041"/></svg>')
+  16 0, auto; */
+  /* belacki */
+  cursor: url('data:image/svg+xml,<svg width="62" height="62" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="m13.5 31.5c0-2.6 2.4-4.7 5.3-4.7h.1c2.9 0 6.3 2.1 6.3 4.7l-2.6-25.1c0-2.4 3-4.4 6.9-4.4h.1c3.8 0 6.9 2 6.9 4.4l-1.2 24.6c0-2.6 2.4-4.7 5.3-4.7h.1c2.9 0 5.3 2.1 5.3 4.7v2.7c.5-1.9 2.4-3.2 4.6-2.7 4.5 1.2 3.6 4.8 4.1 8.7.5 4.8 1.7 7.9 1.3 9.6-1 3.7-3.7 3.2-5.1 4.2s-1.8 2.6-2.9 3.6c-2.2 2-6.2 1.6-9.8 2.5-3.1.8-5.9 2.6-8.3 2.3-2.7-.3-3.4-2.6-6.4-4s-7.1-.7-8.3-3.1c-2.3-4.8-1.7-23.3-1.7-23.3" fill="%23ffe1bd"/><g fill="%23e6b796"><path d="m13.5 31.5c0-1.4.7-2.7 1.8-3.5-1.9 2.4-.6 19.4 1.7 24.2 1.2 2.4 5.3 1.7 8.3 3.1s3.7 3.8 6.4 4c2.4.3 5.2-1.4 8.3-2.1 3.6-.9 6.1-.6 8.3-2.6 1.1-1 1.6-2.5 3.8-3.2 1.6-.5 2.7-1 3.9-2.2v.1c-1 3.7-3.7 3.2-5.1 4.2s-1.8 2.6-2.9 3.6c-2.2 2-6.2 1.6-9.8 2.5-3.1.8-5.9 2.6-8.3 2.3-2.7-.3-3.4-2.6-6.4-4s-7.1-.7-8.3-3.1c-2.3-4.8-1.7-23.3-1.7-23.3"/><path d="m22.6 5.3c-.9 3.8 2.5 38.4 2.5 38.4 0 2.5 1.3 1.5 1.3-1 0 0-3.6-32.5-2.6-37.3.4-2 1.8-2.6 4.2-3.3 0 0-4.6.2-5.4 3.2m14.4 37v-13c0-.7.1-1.4.5-2-1.3.9-2.1 2.2-2.1 3.7v13c-.1 2.7 1.6.9 1.6-1.7m10.4 1.3v-10.4c0-.6.1-1.2.4-1.8-1.1.8-1.9 2-1.9 3.4v10.4c0 2.3 1.5.7 1.5-1.6"/><path d="m34.4 10.8c.8-5.3-1.7-5.5-4.8-5.5s-5.6.2-4.8 5.5c.3 2 2.4 2.7 4.8 2.7s4.5-.8 4.8-2.7"/></g><path d="m34.5 9.9c.8-5.7-1.7-5.9-4.9-5.9s-5.7.2-4.9 5.8c.3 2.1 2.4 2.8 4.9 2.8s4.6-.7 4.9-2.7" fill="%23ffe8dc"/><path d="m15.3 53.6c-3.6-4.2-8.3-6.4-7.1-9.5 1-3 3.1-2.9 5.8-6.3z" fill="%23e6b796"/></svg>') 
+  16 0, auto;
+}
+.no {
+  margin-block-start: 3rem;
+  cursor: url('data:image/svg+xml,<svg width="42" height="42" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="m62 32c0 16.6-13.4 30-30 30s-30-13.4-30-30 13.4-30 30-30 30 13.4 30 30z" fill="%23ffdd67"/><path d="m61.8 13.2c-.5-2.7-2-4.9-4.5-5.6-2.7-.7-5.1.3-7.4 2.7-1.3-3.6-3.3-6.3-6.5-7.7s-6.4-.4-8.4 2.1c-2.1 2.6-2.9 6.7-.7 12 2.1 5 11.4 15 11.7 15.3.4-.2 10.8-6.7 13.3-9.9 2.5-3.1 3-6.2 2.5-8.9m-32.8-8.5c-2-2.5-5.2-3.5-8.4-2.1s-5.2 4.1-6.5 7.7c-2.4-2.3-4.8-3.4-7.5-2.6-2.4.7-4 2.9-4.5 5.6-.5 2.6.1 5.8 2.5 8.9 2.6 3.1 13 9.6 13.4 9.8.3-.3 9.6-10.3 11.7-15.3 2.2-5.3 1.4-9.3-.7-12" fill="%23f46767"/><path d="m49 38.1c0-.8-.5-1.8-1.8-2.1-3.5-.7-8.6-1.3-15.2-1.3s-11.7.7-15.2 1.3c-1.4.3-1.8 1.3-1.8 2.1 0 7.3 5.6 14.6 17 14.6 11.4-.1 17-7.4 17-14.6" fill="%23664e27"/><path d="m44.7 38.3c-2.2-.4-6.8-1-12.7-1s-10.5.6-12.7 1c-1.3.2-1.4.7-1.3 1.5.1.4.1 1 .3 1.6.1.6.3.9 1.3.8 1.9-.2 23-.2 24.9 0 1 .1 1.1-.2 1.3-.8.1-.6.2-1.1.3-1.6 0-.8-.1-1.3-1.4-1.5" fill="%23fff"/></svg>')
+  16 0, auto;
+
+}
+
+
+
+
+
+
+
+
+
+/* Sections */
+section {
+  max-width: 960px;
+  margin-inline: auto;
+  padding-block: clamp(4rem, 0.725rem + 19vi, 12.125rem); /* fluid 64-194 */
+}
+
+hr {
+  border: none;
+  background: url(images/devider.svg) no-repeat center;
+  height: 80px;
+}
+hr.star-devider {
+  border: none;
+  background: url(images/star-devider.svg) no-repeat center;
+  height: 40px;
+}
+hr.megaphone-devider {
+  border: none;
+  background: url(images/megaphone.svg) no-repeat center;
+  height: 76px;
+}
+hr.three-fingers-devider {
+  border: none;
+  background: url(images/srbija-do-tokija-moj-tuki-do-milvokija.svg) no-repeat center;
+  height:92px;
+}
+/* Hero section */
+.hero-section {
+  display: grid;
+  gap: calc(var(--vertical-space) * 2);
+}
+.hero-section h1 {
+  margin-block-end: var(--vertical-space);
+}
+.pop {
+  position: relative;
+}
+.pop::after {
+  content: url(images/pop.svg);
+  position: absolute;
+  left: 100%;
+  top: calc(var(--vertical-space) / -1.5);
+}
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-image img {
+  width: 100%;
+  max-width: 340px
+}
+@media  (min-width: 810px) {
+  .hero-section {
+    display: grid;
+    grid-template-columns: 1fr 270px;
+  }
+  .hero-image {
+    justify-content: end;
+  }
+}
+/* Steps section */
+.steps-section {
+  text-align: center;
+}
+.comic-ol {
+  list-style: none;
+  margin-block: 6rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: var(--fluid-18-24);
+  gap: calc(var(--vertical-space) * 2);
+  counter-reset: steps;
+}
+.comic-ol li {
+  position: relative;
+  padding-block-start: 5rem;
+  width: 220px;
+}
+.comic-ol li::before, 
+.comic-ol li::after {
+  height: 4rem;
+  width: 4rem;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 2rem);
+}
+.comic-ol li::before {
+  counter-increment: steps;
+  content: counter(steps);
+  background-color: rgba(0,0,0,.1);
+  border-radius: 4rem;
+  font-size: 2rem;
+  padding-block-start: .5rem;
+  font-family: var(--font-bold);
+}
+.comic-ol li::after {
+  content: "";
+  background-image: url(images/pencil-circle.svg);
+  background-repeat: no-repeat;
+  background-size:contain;
+  height: calc(4rem + 10px);
+  width: calc(4rem + 10px);
+  left: calc(50% - calc(2rem + 5px));
+  top: -5px
+}
+/* Testimonials section */
+.testimonials-headline {
+  text-align: center;
+}
+.testimonials-headline svg {
+  margin-block-end: var(--vertical-space);
+}
+@media (min-width:660px) {
+  .testimonials-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .testimonials-headline {
+    position: sticky;
+    top: 50%;
+    text-align: left;
+  }
+}
+
+blockquote {
+  position: relative;
+  margin-block-end: 4rem;
+  margin-inline-start: 2rem;
+}
+blockquote:last-child {
+  margin-block-end: 0rem;
+}
+blockquote::before {
+  content: '\201D';
+  font-size: 14rem;
+  position: absolute;
+  top: -1.5rem;
+  left: -2.5rem;
+  line-height: 1;
+  color: rgba(0,0,0,.1);
+}
+/* Cta section */
+.cta-section {
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+/* iFrame open close */
+.disable-scroll {
+  overflow-y: hidden;
+}
+
+#app-iframe {
+    position: fixed;
+    inset: 0;  
+    width: 100%;  
+    height: 100%;
+
+    z-index: 9;
+    border: 0;
+
+
+
+    /* make it centered for out animation */
+    /* left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%); */
+
+
+  
+     animation-name: open-app-iframe;
+     animation-duration: 2.5s;
+     /* animation-delay: 350ms; */
+     animation-timing-function:cubic-bezier(.25, 1, .30, 1);
+     /* animation-fill-mode: forwards; */
+}
+
+@keyframes open-app-iframe{
+  0%{
+      clip-path:circle(0%)
+  }
+  40%{
+      clip-path:circle(20%)
+  }
+  to{
+      clip-path: circle(125%)
+  }
+}
+#app-iframe.close-iframe {
+
+    /* opacity: 1; */
+    animation-name: close-app-iframe;
+    animation-duration: 2.5s;
+    /* animation-delay: 350ms; */
+    animation-timing-function:cubic-bezier(.25, 1, .30, 1);
+    /* animation-fill-mode: forwards; */
+}
+
+@keyframes close-app-iframe {
+0%{
+    clip-path:circle(125%)
+}
+40%{
+    clip-path: circle(20%)
+}
+to{
+    clip-path:circle(0%)
+}
+}
+/* close app/iframe */
+#close-iframe-header {
+  /* width same as app inner box */
+  width: 340px;
+  /* display: flex; */
+  justify-content: end;
+  align-items: center;
+  position: fixed;
+  z-index: 100;
+  /* set it vertical center and then top for app inner box height/2 */
+  top: calc(50% - 320px);
+  left: calc(50% - 170px);
+  display: none;
+}
+/* close app button */
+#close-app {
+  padding-block: 0rem;
+  padding-inline: 0.2rem;
+  min-width: min-content;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-transform: none;
+  background: none;
+  margin-block-end: 0;
+}
+/* add x to the button */
+#close-app::after {
+  content: url(images/close.svg);
+  margin-inline-start: 0.5rem;
+  vertical-align:middle;
+  padding-block-start: 0.8rem;
+}
+#close-app::before {
+  content: "";
+  background: none;
+}
+
+#close-iframe-header.active {
+  display: flex;
+}
+/* animate close button */
+#close-iframe-header.active  #close-app {
+  opacity: 0;
+
+  animation-name: close-in;
+  animation-duration: 650ms;
+  animation-timing-function:ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes close-in {
+  from {
+      transform: translateY(10px);
+      opacity:0
+  }
+  to {
+      transform: translateY(0px);
+      opacity: 1;
+  }
+}

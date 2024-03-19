@@ -1,0 +1,20 @@
+<svg width="117" height="76" viewBox="0 0 117 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g id="Megaphone">
+        <path id="Vector 152" d="M25.3796 62.6485C26.4795 64.0233 26.3767 65.8655 27.5657 67.1866C28.3424 68.0496 29.0824 69.0813 30.1114 69.677C30.6331 69.979 30.9802 70.5641 31.4673 70.9222C32.0983 71.3862 32.9009 71.6917 33.4596 72.2504C34.4807 73.2715 34.7212 72.7421 35.3551 71.7385C35.9808 70.7478 36.737 69.9084 37.4442 68.9991C39.0987 66.8719 36.3909 62.7021 34.8432 61.1543" stroke="#1E1E1E" stroke-width="6" stroke-linecap="round"/>
+        <path id="Vector 134" d="M64.9587 56.77C57.9496 56.77 51.1256 57.0677 44.1441 57.934C36.6536 58.8634 28.9304 57.1197 21.4958 58.3651C16.8549 59.1425 11.7764 61.8467 7.05109 60.4776C4.2957 59.6792 2.40855 54.793 5.18518 52.1139C7.25713 50.1148 9.22853 47.3674 11.1368 45.1299C17.0589 38.1858 24.2776 33.2239 30.2785 26.4194C35.7576 20.2065 41.2375 13.3041 48.1655 10.2095" stroke="#1E1E1E" stroke-width="6" stroke-linecap="round"/>
+        <path id="Vector 154" d="M46.7271 16.0356C46.7271 16.0356 45.4952 27.0371 46.7271 33.9065C47.9613 40.7894 54.8501 49.5036 54.8501 49.5036C54.8501 49.5036 69.4717 63.4207 72.4502 54.4852C75.4287 45.5497 72.4502 14.4112 62.1609 7.10038C51.8717 -0.210436 46.7271 16.0356 46.7271 16.0356Z" stroke="#1E1E1E" stroke-width="6"/>
+        <path id="Vector 155" d="M49.2338 24.3247C51.8049 26.8958 51.7634 29.621 53.0637 32.7092C54.2659 35.5644 55.2892 38.9213 55.2892 42.0252" stroke="#1E1E1E" stroke-width="10" stroke-linecap="round"/>
+        <g id="Lines">
+            <path id="Vector 138" d="M89.6759 42.2568L108.269 44.6721" stroke="#1E1E1E" stroke-width="6" stroke-linecap="round">
+              <animate attributeName="display" from="none" to="block" dur="3" begin="0.6" fill="remove" repeatCount="indefinite"/>
+            </path>
+            <path id="Vector 153" d="M90.9766 28.3752C98.5497 28.0501 105.825 23.7142 113.214 22.1544" stroke="#1E1E1E" stroke-width="6" stroke-linecap="round">
+              <animate attributeName="display" from="none" to="block" dur="3" begin="0.3" fill="remove" repeatCount="indefinite"/>
+            </path>
+            <path id="Vector 136" d="M85.2462 16.331C88.3382 13.6655 91.8992 11.5542 95.1437 9.07754C96.884 7.74902 100.085 6.10601 100.892 3.95407" stroke="#1E1E1E" stroke-width="6" stroke-linecap="round">
+              <animate attributeName="display" from="none" to="block" dur="3" begin="0" fill="remove" repeatCount="indefinite"/>
+            </path>
+            <animate attributeName="display" from="none" to="block" dur="3" begin="3" fill="remove" repeatCount="indefinite"/>
+        </g>
+    </g>
+</svg>
