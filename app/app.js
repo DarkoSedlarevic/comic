@@ -5,7 +5,7 @@
 var   app = document.getElementById("app");
         step1 = document.getElementById("step-1");
         appWrap = document.getElementById("app-wrap");
-        uploadVoice = new Audio('https://github.com/DarkoSedlarevic/comic/blob/master/app/voice/hello.MP3');
+        uploadVoice = new Audio('https://github.com/DarkoSedlarevic/comic/blob/master/app/voice/hello.MP3?raw=true');
 
 
            appWrap.classList.add("active");
